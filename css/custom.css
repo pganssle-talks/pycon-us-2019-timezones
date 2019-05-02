@@ -1,4 +1,4 @@
-
+/**
  * A simple theme for reveal.js presentations, similar
  * to the default theme. The accent color is darkblue.
  *
@@ -33,6 +33,44 @@
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
+
+/* roboto-mono-regular - latin_latin-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'),
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-mono-italic - latin_latin-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Mono Italic'), local('RobotoMono-Italic'),
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-mono-700 - latin_latin-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Mono Bold'), local('RobotoMono-Bold'),
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-mono-700italic - latin_latin-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Mono Bold Italic'), local('RobotoMono-BoldItalic'),
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto_mono/roboto-mono-v5-latin_latin-ext-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -53,8 +91,17 @@ body {
 
 .reveal .slides > section,
 .reveal .slides > section > section {
+  text-align: left;
   line-height: 1.3;
   font-weight: inherit; }
+
+.reveal .slides>section {
+  min-height: 90% !important;
+}
+
+.reveal .slides>section>section {
+  min-height: 100% !important;
+}
 
 /*********************************************
  * HEADERS
@@ -96,7 +143,10 @@ body {
  * OTHER
  *********************************************/
 .reveal p {
-  margin: 0px 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   line-height: 1.3; }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -156,7 +206,6 @@ body {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.05);
   }
 
 .reveal blockquote p:first-child,
@@ -184,7 +233,7 @@ body {
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 400px;
+  max-height: 95%;
   word-wrap: normal; }
 
 .reveal table {
@@ -259,9 +308,26 @@ body {
 /*********************************************
  * IMAGES
  *********************************************/
+
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
+  border: 0;
+  box-shadow: none;
+}
+
+img#splash {
+    border: 2px solid;
+    border-color: #444;
+    background: none;
+    max-width: 90%;
+    max-height: 850px;
+}
+
+img#ghscreenshot {
+    border: 2px solid;
+    border-color: #909090;
+
 }
 
 /* border: 4px solid #000;
@@ -285,35 +351,40 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #00008B; }
+  border-right-color: #000; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #00008B; }
+  border-left-color: #000; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #00008B; }
+  border-bottom-color: #000; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #00008B; }
+  border-top-color: #000; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #0000f1; }
+  border-right-color: #000; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #0000f1; }
+  border-left-color: #000; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #0000f1; }
+  border-bottom-color: #000; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #0000f1; }
+  border-top-color: #000; }
 
 .reveal .controls {
-  top: 0px;
-  right: 0px;
+  top: 5px;
+  right: 5px;
+  height: 105px;
+  width: 105px;
+  bottom: auto;
+  left: auto;
+  color: #000;
 }
 
 /*********************************************
@@ -337,43 +408,21 @@ body {
 
 .reveal .slides {
   height: 98%;
-  width: 95%;
+  width: 90%;
+  max-width: 90%;
   top: auto;
   bottom: auto;
   left: 5%;
   right: 5%;
+  margin-left: 0px;
+  margin-right: 0px;
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
 
-.reveal .footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: absolute;
-  right: 20px;
-  bottom: 2rem;
-  font-size: 3rem;
-  color: #7f7f7f;
-}
-
-
-.reveal .footer span#website {
-    text-decoration: underline;
-}
-
-.reveal .footer span#twitter {
-    font-weight: bold;
-}
-
-.reveal .footer span#logo img {
-    margin-bottom: -1em;
-}
 
 .reveal .slides>section {
   min-height: 90% !important;
-  top: auto !important;
 }
 
 .reveal .slides>section>section {
@@ -411,21 +460,10 @@ div.output_subarea {
   max-width: 100%;
 }
 
-/* Copy of Jupyter input */
-.rendered_html pre {
-    background-color: #f7f7f7;
-    border: 1px solid #cfcfcf;
-    border-radius: 2px;
-    margin-right: 10%;
-}
+/*##################################
+ * Footer
+ */
 
-.highlight {
-    background: rgba(0, 0, 0, 0);
-}
-
-
-
-/** Footer **/
 div.sbcontainer {
     position: fixed;
     top: 5em;
@@ -439,6 +477,15 @@ div.sbcontainer {
 
 img.sbitem {
     opacity: 0.5;
-    width: 2em;
+    width: 1.1em;
+}
+
+img.sbitem#logo {
+    width: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.rendered_html code {
+    background-color: unset;
 }
 
