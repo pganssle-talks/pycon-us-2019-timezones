@@ -286,6 +286,10 @@ body {
 .reveal small * {
   vertical-align: top; }
 
+div.input_area > div.highlight > pre {
+    font-size: 0.8em;
+}
+
 /*********************************************
  * LINKS
  *********************************************/
