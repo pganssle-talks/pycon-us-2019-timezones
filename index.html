@@ -13695,7 +13695,8 @@ a.anchor-link {
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="n">dt1</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">NYC</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> | </span><span class="si">{}</span><span class="s1"> |  </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">dt</span><span class="o">.</span><span class="n">tzname</span><span class="p">(),</span> 
-                                   <span class="s1">&#39;Ambiguous&#39;</span> <span class="k">if</span> <span class="n">tz</span><span class="o">.</span><span class="n">datetime_ambiguous</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;Unambiguous&#39;</span><span class="p">))</span>
+                                   <span class="s1">&#39;Ambiguous&#39;</span> <span class="k">if</span> <span class="n">tz</span><span class="o">.</span><span class="n">datetime_ambiguous</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+                                   <span class="k">else</span> <span class="s1">&#39;Unambiguous&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
